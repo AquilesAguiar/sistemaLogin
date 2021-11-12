@@ -33,7 +33,8 @@ def cadastro():
     idade = request.form['Idade']
     email = request.form['Email']
     senha = request.form['Senha']
-    ctrlUser = adicionarUser(nome,idade,email,senha)
+    perfilUsuario = request.form['perfilUsuario']
+    ctrlUser = adicionarUser(nome,idade,email,senha,perfilUsuario)
 
     if ctrlUser == True:
         return redirect("/")

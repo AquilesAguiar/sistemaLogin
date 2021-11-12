@@ -1,7 +1,7 @@
 import json
 import hashlib
 
-def adicionarUser(nome,idade,email,senha):
+def adicionarUser(nome,idade,email,senha,perfilUsuario):
     with open('database\\users.json', encoding='utf-8') as js:
 
         users = json.load(js)
@@ -15,7 +15,8 @@ def adicionarUser(nome,idade,email,senha):
                 "nome":nome,
                 "idade":idade,
                 "email":email,
-                "senha":hash
+                "senha":hash,
+                "perfilUsuario":perfilUsuario
             }
         )
         usersNovo = json.dumps(users)
